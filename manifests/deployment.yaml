@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thanak81-api-tester-plz1-deployment
+  labels:
+    app: thanak81-api-tester-plz1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thanak81-api-tester-plz1
+  template:
+    metadata:
+      labels:
+        app: thanak81-api-tester-plz1
+    spec:
+      containers:
+        - name: thanak81-api-tester-plz1-container
+          image: pipejet/thanak81-api-tester-plz1:0
+          ports:
+            - containerPort: 8080
